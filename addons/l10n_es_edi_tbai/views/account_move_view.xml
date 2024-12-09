@@ -13,7 +13,7 @@
                         string="Send Bill to TicketBAI"
                         name="l10n_es_tbai_send_bill"
                         type="object"
-                        invisible="not l10n_es_tbai_is_required or move_type not in ('in_invoice', 'in_refund') or state != 'posted' or l10n_es_tbai_state != 'to_send'"
+                        invisible="not l10n_es_tbai_is_required or move_type not in ('out_invoice', 'out_refund') or state != 'posted' or l10n_es_tbai_state != 'to_send'"
                     />
                     <button
                         string="TicketBAI Cancel"
