@@ -545,6 +545,10 @@ class HolidaysRequest(models.Model):
         if self.env.context.get('leave_skip_date_check', False):
             return
 
+        # There is no point in checking work time overlap
+        if self.time_type == "work":
+            return
+        
         all_leaves = self.search([
             ('date_from', '<', max(self.mapped('date_to'))),
             ('date_to', '>', min(self.mapped('date_from'))),
